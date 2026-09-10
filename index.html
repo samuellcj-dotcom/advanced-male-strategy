@@ -269,11 +269,10 @@ linear-gradient(180deg,#101011,#0c0c0d);border-top:1px solid var(--line);border-
 
 .quiz-section{padding:100px 0;background:radial-gradient(circle at 80% 20%,rgba(216,177,94,.08),transparent 30%),linear-gradient(180deg,#0d0d0f,#0a0a0b);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
 .quiz-shell{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
-.quiz-copy h2{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(42px,5.2vw,66px);line-height:1.03;margin:14px 0 18px}
+.quiz-copy h2{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(40px,4.7vw,60px);line-height:1.03;margin:14px 0 18px}.quiz-title-main{display:block;white-space:nowrap}
 .quiz-copy h2 em{display:block;color:var(--gold2);font-style:normal}
 .quiz-copy p{color:#aaa59e;max-width:470px}
-.quiz-meta{display:flex;gap:24px;margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
-.quiz-meta div{display:flex;flex-direction:column}.quiz-meta b{font-size:25px;color:var(--gold2);font-family:Georgia,serif}.quiz-meta span{font-size:10px;color:#77736d}
+.quiz-meta{display:flex;gap:34px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line);align-items:flex-end}.quiz-meta div{display:flex;flex-direction:row;align-items:flex-end;gap:9px;min-width:auto}.quiz-meta b{display:block;font-size:46px;line-height:.82;color:var(--gold2);font-family:"Times New Roman",Times,serif;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}.quiz-meta span{display:block;font-size:13px;line-height:1;color:#aaa59d;margin:0 0 2px;letter-spacing:.02em}
 .quiz-card{min-height:500px;padding:32px;border:1px solid rgba(216,177,94,.2);border-radius:26px;background:linear-gradient(145deg,rgba(216,177,94,.04),rgba(255,255,255,.015)),#121214;box-shadow:0 28px 80px rgba(0,0,0,.28)}
 .quiz-start{min-height:430px;display:flex;flex-direction:column;justify-content:center}
 .quiz-start-badge{display:inline-flex;align-self:flex-start;padding:7px 10px;border:1px solid rgba(216,177,94,.3);border-radius:999px;color:var(--gold2);font-size:9px;letter-spacing:.15em;margin-bottom:20px}
@@ -285,7 +284,7 @@ linear-gradient(180deg,#101011,#0c0c0d);border-top:1px solid var(--line);border-
 .quiz-options{display:grid;gap:10px}.quiz-option{width:100%;display:flex;align-items:center;gap:14px;text-align:left;border:1px solid rgba(255,255,255,.09);border-radius:15px;padding:15px 17px;background:rgba(255,255,255,.02);color:#ddd8cf;transition:.2s}.quiz-option:hover{transform:translateX(4px);border-color:rgba(216,177,94,.36);background:rgba(216,177,94,.055)}.quiz-option span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid rgba(216,177,94,.28);color:var(--gold2);font-family:Georgia,serif}.quiz-option b{font-size:13px}
 .quiz-result{display:none;text-align:center;padding:10px 0}.quiz-result.show{display:block}.result-ring{width:145px;height:145px;margin:8px auto 20px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(216,177,94,.4);box-shadow:inset 0 0 50px rgba(216,177,94,.06)}.result-ring strong{display:block;font-size:46px;line-height:1;color:var(--gold2);font-family:Georgia,serif}.result-ring span{font-size:9px;color:#77736d;letter-spacing:.13em}.result-level{font-size:10px;color:var(--gold);letter-spacing:.16em}.quiz-result h3{font-family:Georgia,"Noto Serif TC",serif;font-size:37px;margin:7px 0}.quiz-result>p{max-width:610px;margin:0 auto;color:#aaa59d}.result-recommend{max-width:620px;margin:22px auto 0;padding:18px 20px;border:1px solid rgba(216,177,94,.18);border-radius:17px;background:rgba(216,177,94,.035);text-align:left}.result-recommend small{font-size:9px;color:#77736d;letter-spacing:.12em}.result-recommend b{display:block;color:var(--gold2);font-size:18px;margin:3px 0}.result-recommend span{font-size:12px;color:#99948d}.result-actions{display:flex;justify-content:center;gap:10px;margin-top:22px}
 @media(max-width:980px){.quiz-shell{grid-template-columns:1fr;gap:36px}}
-@media(max-width:640px){.quiz-section{padding:74px 0}.quiz-card{padding:22px}.quiz-question{font-size:21px}.result-actions{flex-direction:column}.result-actions .btn{width:100%}}
+@media(max-width:640px){.quiz-title-main{white-space:normal}.quiz-section{padding:74px 0}.quiz-card{padding:22px}.quiz-question{font-size:21px}.result-actions{flex-direction:column}.result-actions .btn{width:100%}}
 
 </style>
 </head>
@@ -340,7 +339,7 @@ linear-gradient(180deg,#101011,#0c0c0d);border-top:1px solid var(--line);border-
 <div class="section-shell quiz-shell">
   <div class="quiz-copy reveal">
     <span class="eyebrow"><span></span> STRAIGHT-MAN DIAGNOSTIC</span>
-    <h2>你的直男等級，<em>現在第幾階？</em></h2>
+    <h2><span class="quiz-title-main">你的直男等級，</span><em>現在第幾階？</em></h2>
     <p>6 道日常情境題，快速檢測你的情緒價值、關係判斷、責任界線與自我呈現。結果僅供娛樂，但被說中不負責退費。</p>
     <div class="quiz-meta"><div><b>6</b><span>情境題</span></div><div><b>100</b><span>滿分</span></div><div><b>4</b><span>推薦路線</span></div></div>
   </div>
