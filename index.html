@@ -266,6 +266,27 @@ linear-gradient(180deg,#101011,#0c0c0d);border-top:1px solid var(--line);border-
 
 
 
+
+.quiz-section{padding:100px 0;background:radial-gradient(circle at 80% 20%,rgba(216,177,94,.08),transparent 30%),linear-gradient(180deg,#0d0d0f,#0a0a0b);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.quiz-shell{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.quiz-copy h2{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(42px,5.2vw,66px);line-height:1.03;margin:14px 0 18px}
+.quiz-copy h2 em{display:block;color:var(--gold2);font-style:normal}
+.quiz-copy p{color:#aaa59e;max-width:470px}
+.quiz-meta{display:flex;gap:24px;margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
+.quiz-meta div{display:flex;flex-direction:column}.quiz-meta b{font-size:25px;color:var(--gold2);font-family:Georgia,serif}.quiz-meta span{font-size:10px;color:#77736d}
+.quiz-card{min-height:500px;padding:32px;border:1px solid rgba(216,177,94,.2);border-radius:26px;background:linear-gradient(145deg,rgba(216,177,94,.04),rgba(255,255,255,.015)),#121214;box-shadow:0 28px 80px rgba(0,0,0,.28)}
+.quiz-start{min-height:430px;display:flex;flex-direction:column;justify-content:center}
+.quiz-start-badge{display:inline-flex;align-self:flex-start;padding:7px 10px;border:1px solid rgba(216,177,94,.3);border-radius:999px;color:var(--gold2);font-size:9px;letter-spacing:.15em;margin-bottom:20px}
+.quiz-start h3{font-family:Georgia,"Noto Serif TC",serif;font-size:38px;line-height:1.15;margin:0 0 12px}
+.quiz-start p{color:#9c978f;max-width:580px;margin:0 0 26px}
+.quiz-progress-top{display:flex;justify-content:space-between;gap:20px;margin-bottom:12px}.quiz-progress-top span{font-size:10px;letter-spacing:.15em;color:#817c75}.quiz-progress-top b{font-size:11px;color:var(--gold2)}
+.quiz-progress{height:3px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden;margin-bottom:30px}.quiz-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#a8792e,var(--gold2));transition:.3s}
+.quiz-context{display:block;color:#827d76;font-size:11px;letter-spacing:.08em;margin-bottom:8px}.quiz-question{font-size:25px;line-height:1.45;margin:0 0 22px}
+.quiz-options{display:grid;gap:10px}.quiz-option{width:100%;display:flex;align-items:center;gap:14px;text-align:left;border:1px solid rgba(255,255,255,.09);border-radius:15px;padding:15px 17px;background:rgba(255,255,255,.02);color:#ddd8cf;transition:.2s}.quiz-option:hover{transform:translateX(4px);border-color:rgba(216,177,94,.36);background:rgba(216,177,94,.055)}.quiz-option span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid rgba(216,177,94,.28);color:var(--gold2);font-family:Georgia,serif}.quiz-option b{font-size:13px}
+.quiz-result{display:none;text-align:center;padding:10px 0}.quiz-result.show{display:block}.result-ring{width:145px;height:145px;margin:8px auto 20px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(216,177,94,.4);box-shadow:inset 0 0 50px rgba(216,177,94,.06)}.result-ring strong{display:block;font-size:46px;line-height:1;color:var(--gold2);font-family:Georgia,serif}.result-ring span{font-size:9px;color:#77736d;letter-spacing:.13em}.result-level{font-size:10px;color:var(--gold);letter-spacing:.16em}.quiz-result h3{font-family:Georgia,"Noto Serif TC",serif;font-size:37px;margin:7px 0}.quiz-result>p{max-width:610px;margin:0 auto;color:#aaa59d}.result-recommend{max-width:620px;margin:22px auto 0;padding:18px 20px;border:1px solid rgba(216,177,94,.18);border-radius:17px;background:rgba(216,177,94,.035);text-align:left}.result-recommend small{font-size:9px;color:#77736d;letter-spacing:.12em}.result-recommend b{display:block;color:var(--gold2);font-size:18px;margin:3px 0}.result-recommend span{font-size:12px;color:#99948d}.result-actions{display:flex;justify-content:center;gap:10px;margin-top:22px}
+@media(max-width:980px){.quiz-shell{grid-template-columns:1fr;gap:36px}}
+@media(max-width:640px){.quiz-section{padding:74px 0}.quiz-card{padding:22px}.quiz-question{font-size:21px}.result-actions{flex-direction:column}.result-actions .btn{width:100%}}
+
 </style>
 </head>
 <body>
@@ -276,6 +297,7 @@ linear-gradient(180deg,#101011,#0c0c0d);border-top:1px solid var(--line);border-
 <span class="brand-copy"><b>STRATEGY+</b><small>ONLINE ACADEMY</small></span>
 </a>
 <nav aria-label="主要導覽" class="main-nav">
+<a href="#quiz">入學測驗</a>
 <a href="#courses">課程</a>
 <a href="#bundle">三合一方案</a>
 <a href="#straightman">特別企劃</a>
@@ -313,6 +335,39 @@ linear-gradient(180deg,#101011,#0c0c0d);border-top:1px solid var(--line);border-
 <span>THINK CLEARER</span><i>✦</i><span>SET BOUNDARIES</span><i>✦</i><span>MANAGE RELATIONSHIPS</span><i>✦</i><span>LEAD YOUR LIFE</span><i>✦</i><span>THINK CLEARER</span><i>✦</i><span>SET BOUNDARIES</span><i>✦</i><span>MANAGE RELATIONSHIPS</span><i>✦</i><span>LEAD YOUR LIFE</span>
 </div>
 </section>
+
+<section class="quiz-section" id="quiz">
+<div class="section-shell quiz-shell">
+  <div class="quiz-copy reveal">
+    <span class="eyebrow"><span></span> STRAIGHT-MAN DIAGNOSTIC</span>
+    <h2>你的直男等級，<em>現在第幾階？</em></h2>
+    <p>6 道日常情境題，快速檢測你的情緒價值、關係判斷、責任界線與自我呈現。結果僅供娛樂，但被說中不負責退費。</p>
+    <div class="quiz-meta"><div><b>6</b><span>情境題</span></div><div><b>100</b><span>滿分</span></div><div><b>4</b><span>推薦路線</span></div></div>
+  </div>
+  <div class="quiz-card reveal delay-1">
+    <div id="quizStart" class="quiz-start">
+      <span class="quiz-start-badge">FREE DIAGNOSTIC・免費入學診斷</span>
+      <h3>先別急著買課，<br/>看看你問題到底出在哪。</h3>
+      <p>我們不問 MBTI，也不看星座。只看你遇到真實情境時，第一個反應到底有多直。</p>
+      <button class="btn primary" id="startQuiz">開始測驗 <span>→</span></button>
+    </div>
+    <div id="quizFlow" style="display:none">
+      <div class="quiz-progress-top"><span>STRAIGHT-MAN LEVEL TEST</span><b id="quizCount">01 / 06</b></div>
+      <div class="quiz-progress"><i id="quizProgress"></i></div>
+      <div id="quizQuestionWrap"></div>
+    </div>
+    <div id="quizResult" class="quiz-result">
+      <div class="result-ring"><div><strong id="resultScore">0</strong><span>STRAIGHT SCORE</span></div></div>
+      <span class="result-level" id="resultLevel">LEVEL 01</span>
+      <h3 id="resultTitle">無害直男</h3>
+      <p id="resultText"></p>
+      <div class="result-recommend"><small>RECOMMENDED COURSE・系統推薦</small><b id="resultCourse"></b><span id="resultReason"></span></div>
+      <div class="result-actions"><button class="btn primary" id="resultGoCourse">查看推薦課程 <span>→</span></button><button class="btn ghost" id="restartQuiz">再測一次</button></div>
+    </div>
+  </div>
+</div>
+</section>
+
 <section class="section-shell section-block" id="courses">
 <div class="section-heading reveal">
 <div>
@@ -678,5 +733,54 @@ document.querySelectorAll('details').forEach(d=>{
 });
 
 </script>
+
+<script>
+(function(){
+const qs=[
+["情境 01・情緒價值","對方傳：「今天上班真的累爆了……」你第一個反應是？",[["那就早點睡啊",0,"emotion"],["辛苦了，今天發生什麼事？",3,"emotion"],["我今天也超累",1,"emotion"],["傳一個貼圖結束這回合",0,"emotion"]]],
+["情境 02・責任界線","朋友臨時丟一件明明不是你的事，要你幫忙收尾，你通常會？",[["算了，我做比較快",0,"boundary"],["先確認這件事到底是誰的責任",3,"boundary"],["嘴上說沒問題，心裡氣三天",1,"boundary"],["直接消失",0,"boundary"]]],
+["情境 03・關係節奏","約會對方說：「吃什麼都可以。」你會怎麼處理？",[["那就真的隨便找一家",1,"relation"],["直接丟三個選項讓對方挑",3,"relation"],["問『妳到底想吃什麼』直到有答案",0,"relation"],["我也都可以，所以兩個人一起沒意見",0,"relation"]]],
+["情境 04・自我框架","團體討論時大家問你的意見，但你其實跟多數人不同，你會？",[["都可以，你們決定就好",0,"frame"],["先講自己的理由，再一起討論",3,"frame"],["心裡不同意，但回家再抱怨",1,"frame"],["堅持我的才是對的",1,"frame"]]],
+["情境 05・鏡頭魅力","朋友幫你拍了一張照片，你覺得不好看，你會？",[["我就是不上相，算了",1,"camera"],["請他重拍 47 張",1,"camera"],["調整角度、光線和姿勢再拍一次",3,"camera"],["直接開前鏡頭，還是自己最懂自己",2,"camera"]]],
+["情境 06・魅力表達","第一次認識新朋友，聊天突然安靜了，你比較可能？",[["拿手機出來滑",0,"charm"],["一直問對方問題，像面試一樣",1,"charm"],["從剛剛的話題延伸，也分享一點自己",3,"charm"],["講一個只有自己朋友才懂的內梗",1,"charm"]]]
+];
+let i=0,total=0,dims={emotion:0,boundary:0,relation:0,frame:0,camera:0,charm:0},target="#straightman";
+const s=document.getElementById("startQuiz"),start=document.getElementById("quizStart"),flow=document.getElementById("quizFlow"),wrap=document.getElementById("quizQuestionWrap"),res=document.getElementById("quizResult");
+function render(){
+ const q=qs[i];
+ document.getElementById("quizCount").textContent=String(i+1).padStart(2,"0")+" / 06";
+ document.getElementById("quizProgress").style.width=(i/6*100)+"%";
+ wrap.innerHTML='<span class="quiz-context">'+q[0]+'</span><h3 class="quiz-question">'+q[1]+'</h3><div class="quiz-options">'+q[2].map((o,j)=>'<button class="quiz-option" data-s="'+o[1]+'" data-d="'+o[2]+'"><span>'+String.fromCharCode(65+j)+'</span><b>'+o[0]+'</b></button>').join("")+'</div>';
+ wrap.querySelectorAll(".quiz-option").forEach(b=>b.onclick=()=>{total+=+b.dataset.s;dims[b.dataset.d]+=+b.dataset.s;i++;i<6?render():show();});
+}
+function show(){
+ flow.style.display="none";
+ const pct=Math.round(total/18*100);
+ let lv,title,txt;
+ if(pct>=84){lv="LEVEL 04・罕見成熟體";title="高功能直男";txt="你仍保有直男核心，但情緒理解、界線與社交判斷已經相當完整。最大的風險，是開始覺得自己什麼都會。";}
+ else if(pct>=62){lv="LEVEL 03・可升級型";title="進化中的直男";txt="基礎功能大致正常，偶爾還是會在關鍵時刻恢復原廠設定。補幾個盲點，升級空間很大。";}
+ else if(pct>=38){lv="LEVEL 02・典型樣本";title="標準直男";txt="沒有惡意，只是常常用自己的邏輯處理所有人的世界。很多問題你不是做錯，而是沒發現那裡有題目。";}
+ else{lv="LEVEL 01・原廠設定";title="純種直男";txt="恭喜，你幾乎完整保留了出廠設定。遇到情緒先解決問題，遇到選擇先說都可以，課程存在就是為了這一刻。";}
+ const weak=Object.entries(dims).sort((a,b)=>a[1]-b[1])[0][0];
+ let course,reason;
+ if(weak==="boundary"){course="《高效撇除責任心課》";reason="你的主要風險是責任界線容易模糊。先分清楚哪些事該扛、哪些不用。";target="#courses";}
+ else if(weak==="relation"){course="《多線關係管理學》";reason="你最需要補的是關係節奏與選擇管理，避免一忙就亂。";target="#courses";}
+ else if(weak==="frame"){course="《男性主導權養成課》";reason="你的自我框架還有升級空間。不是控制別人，而是先學會有自己的判斷。";target="#courses";}
+ else{course="《高階直男養成術》";reason="你的弱點落在情緒價值、表達或鏡頭呈現，六人聯合進階課最適合一次補齊。";target="#straightman";}
+ document.getElementById("resultScore").textContent=pct;
+ document.getElementById("resultLevel").textContent=lv;
+ document.getElementById("resultTitle").textContent=title;
+ document.getElementById("resultText").textContent=txt;
+ document.getElementById("resultCourse").textContent=course;
+ document.getElementById("resultReason").textContent=reason;
+ res.classList.add("show");
+}
+function reset(){i=0;total=0;dims={emotion:0,boundary:0,relation:0,frame:0,camera:0,charm:0};res.classList.remove("show");start.style.display="flex";flow.style.display="none";}
+s.onclick=()=>{start.style.display="none";flow.style.display="block";render();};
+document.getElementById("restartQuiz").onclick=reset;
+document.getElementById("resultGoCourse").onclick=()=>{const el=document.querySelector(target);if(el)el.scrollIntoView({behavior:"smooth"});};
+})();
+</script>
+
 </body>
 </html>
