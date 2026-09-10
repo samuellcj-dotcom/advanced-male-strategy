@@ -340,18 +340,18 @@ linear-gradient(180deg,#101011,#0c0c0d);border-top:1px solid var(--line);border-
   <div class="quiz-copy reveal">
     <span class="eyebrow"><span></span> STRAIGHT-MAN DIAGNOSTIC</span>
     <h2><span class="quiz-title-main">你的直男等級，</span><em>現在第幾階？</em></h2>
-    <p>6 道日常情境題，快速檢測你的情緒價值、關係判斷、責任界線與自我呈現。結果僅供娛樂，但被說中不負責退費。</p>
-    <div class="quiz-meta"><div><b>6</b><span>情境題</span></div><div><b>100</b><span>滿分</span></div><div><b>4</b><span>推薦路線</span></div></div>
+    <p>10 道地獄難度情境題。每個選項都有代價，真正考的是你在雙重期待、高壓關係與社交場合裡怎麼取捨。結果僅供娛樂，但被說中不負責退費。</p>
+    <div class="quiz-meta"><div><b>10</b><span>情境題</span></div><div><b>100</b><span>滿分</span></div><div><b>4</b><span>推薦路線</span></div></div>
   </div>
   <div class="quiz-card reveal delay-1">
     <div id="quizStart" class="quiz-start">
       <span class="quiz-start-badge">FREE DIAGNOSTIC・免費入學診斷</span>
       <h3>先別急著買課，<br/>看看你問題到底出在哪。</h3>
-      <p>我們不問 MBTI，也不看星座。只看你遇到真實情境時，第一個反應到底有多直。</p>
+      <p>沒有完美答案。很多時候怎麼答都可能被嫌，差別只在你能不能把損失降到最低。</p>
       <button class="btn primary" id="startQuiz">開始測驗 <span>→</span></button>
     </div>
     <div id="quizFlow" style="display:none">
-      <div class="quiz-progress-top"><span>STRAIGHT-MAN LEVEL TEST</span><b id="quizCount">01 / 06</b></div>
+      <div class="quiz-progress-top"><span>STRAIGHT-MAN LEVEL TEST</span><b id="quizCount">01 / 10</b></div>
       <div class="quiz-progress"><i id="quizProgress"></i></div>
       <div id="quizQuestionWrap"></div>
     </div>
@@ -736,36 +736,166 @@ document.querySelectorAll('details').forEach(d=>{
 <script>
 (function(){
 const qs=[
-["情境 01・情緒價值","對方傳：「今天上班真的累爆了……」你第一個反應是？",[["那就早點睡啊",0,"emotion"],["辛苦了，今天發生什麼事？",3,"emotion"],["我今天也超累",1,"emotion"],["傳一個貼圖結束這回合",0,"emotion"]]],
-["情境 02・責任界線","朋友臨時丟一件明明不是你的事，要你幫忙收尾，你通常會？",[["算了，我做比較快",0,"boundary"],["先確認這件事到底是誰的責任",3,"boundary"],["嘴上說沒問題，心裡氣三天",1,"boundary"],["直接消失",0,"boundary"]]],
-["情境 03・關係節奏","約會對方說：「吃什麼都可以。」你會怎麼處理？",[["那就真的隨便找一家",1,"relation"],["直接丟三個選項讓對方挑",3,"relation"],["問『妳到底想吃什麼』直到有答案",0,"relation"],["我也都可以，所以兩個人一起沒意見",0,"relation"]]],
-["情境 04・自我框架","團體討論時大家問你的意見，但你其實跟多數人不同，你會？",[["都可以，你們決定就好",0,"frame"],["先講自己的理由，再一起討論",3,"frame"],["心裡不同意，但回家再抱怨",1,"frame"],["堅持我的才是對的",1,"frame"]]],
-["情境 05・鏡頭魅力","朋友幫你拍了一張照片，你覺得不好看，你會？",[["我就是不上相，算了",1,"camera"],["請他重拍 47 張",1,"camera"],["調整角度、光線和姿勢再拍一次",3,"camera"],["直接開前鏡頭，還是自己最懂自己",2,"camera"]]],
-["情境 06・魅力表達","第一次認識新朋友，聊天突然安靜了，你比較可能？",[["拿手機出來滑",0,"charm"],["一直問對方問題，像面試一樣",1,"charm"],["從剛剛的話題延伸，也分享一點自己",3,"charm"],["講一個只有自己朋友才懂的內梗",1,"charm"]]]
+["情境 01・情緒高壓",
+"她說：「我今天很不爽，但你不要問我怎麼了；你如果真的懂我，就應該知道。」你會？",
+[
+["先陪著她，不追問原因，等她願意說再談",2,"emotion"],
+["說自己感覺到她不開心，但不靠猜；她願意說時我會聽",3,"emotion"],
+["先回想今天所有互動，猜一個最可能的點道歉",1,"emotion"],
+["尊重她說不要問，暫時照平常互動",1,"emotion"]
+]],
+
+["情境 02・雙重期待",
+"她說：「我希望你有主見，但你剛剛自己決定餐廳又沒有先問我。」你會？",
+[
+["下次先給兩三個選項，再由我做最後決定",3,"frame"],
+["直接說『妳不是叫我要有主見嗎？』",1,"frame"],
+["以後每件事都先問她，避免踩雷",0,"frame"],
+["承認這次沒顧到她的偏好，但保留自己做決定的方式",2,"frame"]
+]],
+
+["情境 03・關係測試",
+"她突然問：「如果我跟你媽同時掉進水裡，你先救誰？」你會？",
+[
+["回答先救比較不會游泳的那個",2,"relation"],
+["直接回答先救她，因為這題本質不是在問救生",2,"relation"],
+["笑著說這題沒有標準答案，但可以告訴她我在意她什麼",3,"relation"],
+["反問：『那我跟妳爸掉進去妳救誰？』",1,"relation"]
+]],
+
+["情境 04・社交場合",
+"聚餐時朋友拿你另一半開了一個不算惡意、但她明顯不太舒服的玩笑。現場大家都在笑，你會？",
+[
+["當場幫她把話題帶開，不讓場面僵掉",3,"charm"],
+["直接請朋友不要再開這類玩笑",2,"charm"],
+["先跟著笑，散場後再安慰她",0,"charm"],
+["看她有沒有自己回應；若她能處理就先不搶話",2,"charm"]
+]],
+
+["情境 05・界線拉扯",
+"她說：「你不是不能跟異性朋友聯絡，但如果你真的尊重我，應該自己知道哪些人不該再聊。」你會？",
+[
+["請她說具體是哪種互動讓她不舒服，再談界線",3,"boundary"],
+["主動減少所有容易讓她介意的異性互動",1,"boundary"],
+["說我會注意，但不接受模糊規則由我自己猜",2,"boundary"],
+["先照做一陣子，看她安全感有沒有變好",1,"boundary"]
+]],
+
+["情境 06・社交取捨",
+"朋友聚會中有一位你很熟的朋友一直主導話題，新加入的人幾乎插不上話。你會？",
+[
+["刻意把話題丟給新加入的人，讓他有機會參與",3,"charm"],
+["順著原本的氣氛，等有自然空檔再帶他進來",2,"charm"],
+["私下跟熟朋友說他今天太搶話",1,"charm"],
+["先觀察新加入的人是不是其實不想講話",2,"charm"]
+]],
+
+["情境 07・時間與安全感",
+"她說：「你忙我可以理解，但如果整天都沒有主動想到要回我，我會覺得我在你心裡不重要。」你會？",
+[
+["約定忙碌日也至少固定一個時間主動聯絡",3,"relation"],
+["解釋自己忙的時候真的不會看手機，但不代表不在乎",1,"relation"],
+["平常多主動，忙碌時就不用硬撐固定頻率",2,"relation"],
+["請她不要把回訊息頻率直接等同於在乎程度",2,"relation"]
+]],
+
+["情境 08・形象與伴侶意見",
+"你很喜歡一張自己的照片，但她說：「這張真的不好看，你放這張我會覺得很尷尬。」你會？",
+[
+["還是放，因為是我的帳號而且我自己喜歡",2,"camera"],
+["問她具體覺得哪裡不好，再決定要不要換",3,"camera"],
+["換掉，伴侶的審美也是重要參考",1,"camera"],
+["另外挑一張自己也喜歡、她也能接受的",3,"camera"]
+]],
+
+["情境 09・公開場合衝突",
+"一群朋友面前，她用半開玩笑的方式說：「他就是很不會照顧人啊。」大家笑了，但你其實不舒服。你會？",
+[
+["當下笑笑帶過，回去再跟她說自己不喜歡這種公開調侃",3,"boundary"],
+["當場用玩笑回敬她，讓彼此扯平",1,"boundary"],
+["直接說『這我不太喜歡』，但不延伸爭論",2,"boundary"],
+["先不處理，看看她是不是只是一次性的玩笑",1,"boundary"]
+]],
+
+["情境 10・終極無解題",
+"她問：「你覺得我今天這件衣服好看嗎？」你其實覺得上一套比較適合她，而且她已經準備出門了。你會？",
+[
+["說『這套也好看，但我更喜歡妳上一套』",3,"emotion"],
+["直接說好看，現在不是給誠實審美評分的時機",2,"emotion"],
+["說『妳自己喜歡最重要』，不直接評論",1,"emotion"],
+["誠實說上一套比較適合，讓她自己決定要不要換",2,"emotion"]
+]]
 ];
+
 let i=0,total=0,dims={emotion:0,boundary:0,relation:0,frame:0,camera:0,charm:0},target="#straightman";
+const dimMax={emotion:6,boundary:6,relation:6,frame:3,camera:3,charm:6};
 const s=document.getElementById("startQuiz"),start=document.getElementById("quizStart"),flow=document.getElementById("quizFlow"),wrap=document.getElementById("quizQuestionWrap"),res=document.getElementById("quizResult");
+
 function render(){
  const q=qs[i];
- document.getElementById("quizCount").textContent=String(i+1).padStart(2,"0")+" / 06";
- document.getElementById("quizProgress").style.width=(i/6*100)+"%";
+ document.getElementById("quizCount").textContent=String(i+1).padStart(2,"0")+" / "+String(qs.length).padStart(2,"0");
+ document.getElementById("quizProgress").style.width=(i/qs.length*100)+"%";
  wrap.innerHTML='<span class="quiz-context">'+q[0]+'</span><h3 class="quiz-question">'+q[1]+'</h3><div class="quiz-options">'+q[2].map((o,j)=>'<button class="quiz-option" data-s="'+o[1]+'" data-d="'+o[2]+'"><span>'+String.fromCharCode(65+j)+'</span><b>'+o[0]+'</b></button>').join("")+'</div>';
- wrap.querySelectorAll(".quiz-option").forEach(b=>b.onclick=()=>{total+=+b.dataset.s;dims[b.dataset.d]+=+b.dataset.s;i++;i<6?render():show();});
+ wrap.querySelectorAll(".quiz-option").forEach(b=>b.onclick=()=>{total+=+b.dataset.s;dims[b.dataset.d]+=+b.dataset.s;i++;i<qs.length?render():show();});
 }
+
 function show(){
  flow.style.display="none";
- const pct=Math.round(total/18*100);
+ document.getElementById("quizProgress").style.width="100%";
+ const pct=Math.round(total/(qs.length*3)*100);
+
+ // 50% random entertainment-only branch; not an inference of sexual orientation.
+ const rainbowBranch = Math.random() < 0.50;
+
  let lv,title,txt;
- if(pct>=84){lv="LEVEL 04・罕見成熟體";title="高功能直男";txt="你仍保有直男核心，但情緒理解、界線與社交判斷已經相當完整。最大的風險，是開始覺得自己什麼都會。";}
- else if(pct>=62){lv="LEVEL 03・可升級型";title="進化中的直男";txt="基礎功能大致正常，偶爾還是會在關鍵時刻恢復原廠設定。補幾個盲點，升級空間很大。";}
- else if(pct>=38){lv="LEVEL 02・典型樣本";title="標準直男";txt="沒有惡意，只是常常用自己的邏輯處理所有人的世界。很多問題你不是做錯，而是沒發現那裡有題目。";}
- else{lv="LEVEL 01・原廠設定";title="純種直男";txt="恭喜，你幾乎完整保留了出廠設定。遇到情緒先解決問題，遇到選擇先說都可以，課程存在就是為了這一刻。";}
- const weak=Object.entries(dims).sort((a,b)=>a[1]-b[1])[0][0];
+ if(rainbowBranch){
+   lv="HIDDEN ENDING・彩虹支線";
+   title="恭喜你，你是甲甲";
+   txt="不用回頭找是哪一題答錯了。這是 50% 隨機娛樂彩蛋，跟你的作答內容與真實性向完全無關。";
+ }else if(pct>=93){
+   lv="LEVEL 04・極稀有樣本";
+   title="高功能直男";
+   txt="你幾乎每次都能在界線、情緒、場合與關係成本之間找到平衡。這個分數不是因為你懂標準答案，而是因為你很少只看一個原則。";
+ }else if(pct>=84){
+   lv="LEVEL 03・艱難進化";
+   title="進化中的直男";
+   txt="你已經能處理大部分模糊情境，但在高壓、雙重期待或公開場合裡仍可能失手。這個等級刻意設得很難，不是隨便選幾個好聽答案就能拿到。";
+ }else if(pct>=66){
+   lv="LEVEL 02・典型高壓樣本";
+   title="標準直男";
+   txt="你的多數答案都有道理，但這套測驗考的不是有沒有道理，而是能不能同時處理情緒、界線與場合。少看一層，就很容易在現實裡踩雷。";
+ }else{
+   lv="LEVEL 01・原廠設定";
+   title="純種直男";
+   txt="你不是不會思考，而是比較常選擇最直接、最有效率或最符合單一原則的做法。可惜高壓關係與人際場合，往往專門處罰這種答案。";
+ }
+
+ const ratios=Object.entries(dims).map(([k,v])=>[k,v/dimMax[k]]).sort((a,b)=>a[1]-b[1]);
+ const weak=ratios[0][0];
  let course,reason;
- if(weak==="boundary"){course="《高效撇除責任心課》";reason="你的主要風險是責任界線容易模糊。先分清楚哪些事該扛、哪些不用。";target="#courses";}
- else if(weak==="relation"){course="《多線關係管理學》";reason="你最需要補的是關係節奏與選擇管理，避免一忙就亂。";target="#courses";}
- else if(weak==="frame"){course="《男性主導權養成課》";reason="你的自我框架還有升級空間。不是控制別人，而是先學會有自己的判斷。";target="#courses";}
- else{course="《高階直男養成術》";reason="你的弱點落在情緒價值、表達或鏡頭呈現，六人聯合進階課最適合一次補齊。";target="#straightman";}
+
+ if(rainbowBranch){
+   course="SYSTEM RESULT・甲甲支線";
+   reason="恭喜觸發 50% 隨機彩蛋。建議先截圖丟群組，再回來重測一次。";
+   target="#quiz";
+ }else if(weak==="boundary"){
+   course="《高效撇除責任心課》";
+   reason="你比較容易在顧慮關係時讓自己的界線變模糊。真正難的不是拒絕，而是拒絕之後關係還能正常運作。";
+   target="#courses";
+ }else if(weak==="relation"){
+   course="《多線關係管理學》";
+   reason="你的主要弱項是關係節奏與期待管理。很多高難度情境都沒有完美回答，只能靠事前建立規則降低誤解。";
+   target="#courses";
+ }else if(weak==="frame"){
+   course="《男性主導權養成課》";
+   reason="你需要的不是更強勢，而是在矛盾期待與雙重標準裡仍然能保留自己的判斷。";
+   target="#courses";
+ }else{
+   course="《高階直男養成術》";
+   reason="你的弱點主要落在情緒、社交場合或自我呈現。這些題目最難的地方，通常不是答案本身，而是時機與語氣。";
+   target="#straightman";
+ }
+
  document.getElementById("resultScore").textContent=pct;
  document.getElementById("resultLevel").textContent=lv;
  document.getElementById("resultTitle").textContent=title;
@@ -774,8 +904,24 @@ function show(){
  document.getElementById("resultReason").textContent=reason;
  res.classList.add("show");
 }
-function reset(){i=0;total=0;dims={emotion:0,boundary:0,relation:0,frame:0,camera:0,charm:0};res.classList.remove("show");start.style.display="flex";flow.style.display="none";}
-s.onclick=()=>{start.style.display="none";flow.style.display="block";render();};
+
+function reset(){
+ i=0;total=0;
+ dims={emotion:0,boundary:0,relation:0,frame:0,camera:0,charm:0};
+ res.classList.remove("show");
+ start.style.display="flex";
+ flow.style.display="none";
+ document.getElementById("quizProgress").style.width="0%";
+}
+
+s.onclick=()=>{
+ i=0;total=0;
+ dims={emotion:0,boundary:0,relation:0,frame:0,camera:0,charm:0};
+ start.style.display="none";
+ flow.style.display="block";
+ render();
+};
+
 document.getElementById("restartQuiz").onclick=reset;
 document.getElementById("resultGoCourse").onclick=()=>{const el=document.querySelector(target);if(el)el.scrollIntoView({behavior:"smooth"});};
 })();
